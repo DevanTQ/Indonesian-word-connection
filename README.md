@@ -49,7 +49,7 @@ Because the app uses `fetch()` to load `wordlist.json`, it **cannot be opened by
 **Option 2 — Python HTTP Server**
 ```bash
 python -m http.server 8000
-# then open: http://localhost:8000/kamus-awalan.html
+# then open: http://localhost:8000/index.html
 ```
 
 **Option 3 — Node.js**
@@ -60,7 +60,7 @@ npx serve .
 **Option 4 — GitHub Pages**
 Enable GitHub Pages in your repository settings pointing to the `main` branch root. The app will be live at:
 ```
-https://DevanTQ.github.io/Indonesian-word-connection/kamus-awalan.html
+https://DevanTQ.github.io/Indonesian-word-connection/index.html
 ```
 
 ---
@@ -123,7 +123,7 @@ The app automatically merges words from `wordlist.json` with the built-in wordli
 
 ## 🗂️ Built-in Word Categories
 
-The wordlist embedded in `kamus-awalan.html` covers:
+The wordlist embedded in `index.html` covers:
 
 - **General** — base words, affixed forms, everyday formal vocabulary
 - **Chemistry** — elements, compounds, chemical processes (electrolysis, hydrolysis, oxidation, etc.)
