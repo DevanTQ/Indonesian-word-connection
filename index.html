@@ -29,7 +29,6 @@
     overflow-x: hidden;
   }
 
-  /* Background texture */
   body::before {
     content: '';
     position: fixed;
@@ -41,7 +40,6 @@
     z-index: 0;
   }
 
-  /* Decorative grid lines */
   .grid-deco {
     position: fixed;
     inset: 0;
@@ -61,7 +59,6 @@
     z-index: 1;
   }
 
-  /* Header */
   header {
     padding: 56px 0 40px;
     border-bottom: 1px solid var(--border);
@@ -124,7 +121,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* Search Area */
   .search-zone {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -171,7 +167,6 @@
     font-size: 16px;
   }
 
-  /* Stats bar */
   .stats-bar {
     display: flex;
     align-items: center;
@@ -229,7 +224,6 @@
     display: inline-block;
   }
 
-  /* Results grid */
   #results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -293,7 +287,6 @@
     letter-spacing: 0.1em;
   }
 
-  /* Empty state */
   .empty-state {
     grid-column: 1 / -1;
     padding: 60px 24px;
@@ -314,7 +307,6 @@
     font-size: 15px;
   }
 
-  /* Initial state */
   .initial-state {
     grid-column: 1 / -1;
     padding: 80px 24px;
@@ -340,7 +332,6 @@
     50% { transform: translateY(-8px); }
   }
 
-  /* Category pills strip */
   .cat-strip {
     display: flex;
     gap: 8px;
@@ -367,7 +358,6 @@
     background: var(--tag-bg);
   }
 
-  /* Responsive */
   @media (max-width: 600px) {
     .search-zone { grid-template-columns: 1fr; }
     .wordcount-badge { display: none; }
@@ -428,12 +418,8 @@
 </div>
 
 <script>
-// ============================================================
-// WORDLIST — Bahasa Indonesia (umum + sains + istilah teknis)
-// ============================================================
 const WORDS = [
 
-// ——— UMUM ———
 // A
 "abad","abadi","abadikan","abah","abal","aban","abantu","abar","abdi","abdikan","aben","aberasi","abet","abis","ablasi","abolisi","absen","absensi","abstrak","abstraksi","abu","abuh","acak","acara","acuan","ada","adab","adakan","adang","adaptasi","adat","adik","adil","aduan","advokat","afeksi","agak","agar","agung","ahli","aib","akan","akar","akibat","aksi","aktif","akui","akun","alam","alami","alasan","alat","alih","aliran","alur","amalan","ambil","ambigu","ambulans","amin","amir","ampun","ancam","angin","antar","antara","antisipasi","api","apung","Arab","arah","arus","asam","asal","asli","asuh","atap","atur","awalan","awas","ayah","ayam",
 
@@ -629,17 +615,14 @@ const WORDS = [
 "vegetasi","vulkanik","vulkanisme",
 "waduk","wilayah",
 
-// ——— KATA BERAWALAN MEN- ———
 "menabung","menabrak","menahan","menaikkan","menakar","menaklukan","menanam","menanggapi","menanggung","menangkap","menarik","menata","menawari","menawarkan",
 "mencapai","mencari","mencatat","mencegah","mencicipi","menciptakan",
 "mendapatkan","mendalami","mendanai","mendorong","mengatasi","mengumpulkan",
 "menjaga","menjual","menolak","menopang","mentransfer","menyelidiki","menyebabkan",
 
-// ——— KATA BERAKHIRAN -AN ———
 "pengetahuan","perencanaan","pengembangan","pendidikan","perjalanan","perjanjian","pertemuan","pertanyaan","persamaan","perbedaan","perbincangan",
 "kemampuan","kemajuan","kenyamanan","kesehatan","keamanan","kecepatan","kebebasan","keterbukaan",
 
-// ——— KATA BERAKHIRAN -KAN ———
 "hilangkan","hadirkan","hapuskan","hidupkan","hubungkan","hentikan",
 "jadikan","jalankan","jangkau","jelaskan","jualkan",
 "kenalkan","kuatkan","kembangkan",
@@ -650,10 +633,8 @@ const WORDS = [
 "tambahkan","terapkan","tingkatkan","turunkan",
 "ubahkan","ungkapkan","usulkan",
 
-// ——— KATA BERAKHIRAN -I ———
 "hadapi","hormati","hubungi","ikuti","jauhi","jelajahi","kagumi","kenali","ketahui","kuasai","langkahi","masuki","miliki","penuhi","rawati","sadari","sertai","tangani","temui","ujiani","wakilkan",
 
-// ——— KATA BERAKHIRAN -SI ———
 "absensi","absorpsi","abstraksi","adaptasi","adisi","adjeksi","administrasi","adopsi","aerasi","agitasi","aglomerasi","akomodasi","akselerasi","aktivasi","akumulasi","akuisisi","analisis","animasi","anotasi","antisipasi","aplikasi","apresiasi","asimilasi","asosiasi","atraksi","auksiliasi",
 "deduksi","delegasi","demonstrasi","depresi","deregulasi","derivasi","deskripsi","desinfeksi","diferensiasi","digitalisasi","disosiasi","distribusi","diversifikasi","dominasi",
 "edukasi","elaborasi","elevasi","emosi","evaluasi","evaporasi","evolusi",
@@ -673,7 +654,6 @@ const WORDS = [
 "urbanisasi",
 "validasi","variasi","verifikasi","visualisasi","vokasi",
 
-// ——— KATA SERAPAN / ISTILAH MODERN ———
 "digital","dinamis","direktif","diskusi","domain","dominan",
 "ekuivalen","eksistensi","ekspansi","eksplorasi","ekspresi",
 "fenomena","fleksibel","format","fundamental",
@@ -689,14 +669,12 @@ const WORDS = [
 "universal","urgensi",
 "validitas","virtual",
 
-// ——— TAMBAHAN KATA UMUM PANJANG ———
 "bertanggung","bertanggungjawab","bersungguh","sungguh","berkesempatan","berkemungkinan","berkepentingan","berkesinambungan","berkecimpung","berkelanjutan","berkembang","berkedudukan","berkolaborasi","berkontribusi","berlandaskan","berlangsung","berpengaruh","berpengalaman","berpendidikan","bersangkutan","bersamaan","bersatu","bertumbuh","bertahan","berubah","berhasil",
 
 "kemungkinan","kesinambungan","keberlanjutan","kecerdasan","kehidupan","kebersamaan","keterlibatan","keterampilan","keterkaitan","kepentingan","kepercayaan","kepemimpinan","kewenangan","kemandirian","kemakmuran","kejujuran","ketelitian","keberhasilan","keselarasan","keterangan",
 
 "perkembangan","pertumbuhan","perubahan","perjuangan","perjalanan","peningkatan","pendekatan","pencapaian","pelaksanaan","penerapan","penggunaan","pengetahuan","perencanaan","penyesuaian","pengembangan","pembangunan","pemanfaatan","pelestarian","perlindungan",
 
-// ——— KATA ILMU SOSIAL / EKONOMI ———
 "akuntabilitas","alokasi","amanah","anggaran","aset","audit",
 "bank","biaya","bisnis","bursa",
 "cadangan","cicilan","defisit","deposito","devisa","dividen","ekspor","ekuitas",
@@ -715,9 +693,8 @@ const WORDS = [
 "valuasi",
 "yield",
 
-]; // end WORDS
+];
 
-// ——— Category tagging (for future use, filter by set) ———
 const CAT_WORDS = {
   kimia: new Set(["asam","asetat","asetilen","asetilkolin","asetamid","alkohol","alkana","alkena","alkuna","alkil","alkilasi","alkaloid","aluminium","amalgam","amida","amina","amonia","analit","anion","anode","anoda","anorganik","argentum","aromatik","argon","arsen","basa","benzena","berillium","bismut","brom","bromida","buffer","dehidrasi","denaturasi","disosiasi","dioksida","difusi","distilasi","elektrolit","elektron","elektrolisis","elektroforesis","emulsi","entalpi","entropi","enzim","ester","etanol","etena","eter","fenolik","fermentasi","fluorida","fosfat","fosfida","fosfor","fraksi","fraksinasi","galium","gliserin","glukosa","glikolisis","grafit","halogen","hidrogen","hidroksi","hidroksida","hidrokarbon","hidrolisis","hidrofil","hidrofob","higrokopis","ikatan","indikator","iodin","iodida","ion","isomer","isomerisasi","isotop","isotopik","kalium","kalsium","katalis","kation","kimia","klorin","klorida","koagulasi","koloid","konsentrasi","korosi","kovalen","larutan","ligan","logam","lipid","magnesium","mangan","massa","materi","merkuri","metana","metanol","mol","molalitas","molaritas","molekul","monomer","natrium","nikel","nitrogen","nitrida","nitrat","oksida","oksidasi","oksigen","orbital","organik","osmosis","oksidator","padatan","periodik","petrokimia","pH","polimer","polimerisasi","presipitat","radikal","redoks","reduksi","reagen","reaksi","reaktan","senyawa","silikon","sublimasi","sulfat","sulfida","sulfur","sintesis","termokimia","titran","titrasi","tembaga","trigliserida","uranium","unsur","urea","valensi","viskositas","zinc","zat","zeolit"]),
   fisika: new Set(["adiabatik","akselerasi","akustik","amplitudo","anisotropi","balistik","baterei","boson","bunyi","cahaya","daya","densitas","difraksi","dinamika","dispersi","elastisitas","elektrik","elektromagnetik","elektronik","energi","ferkunsi","fluida","fluks","foton","frekuensi","gaya","gelombang","gravitasi","hambatan","hukum","impuls","induktansi","inersia","interferensi","kapasitas","kapasitor","kalorimetri","kinetika","konduksi","konduktor","konservasi","konveksi","kosmologi","kuantum","lensa","magnet","magnetik","mekanika","momen","momentum","neutron","nuklir","nukleasi","osilasi","osilator","optik","partikel","percepatan","pemantulan","pembiasan","periode","plasma","polarisasi","potensial","proton","radiasi","reaktor","relativitas","resonansi","resistansi","resistivitas","semikonduktor","spektrum","spin","suhu","superkonduktor","tegangan","termodinamika","transformator","transmisi","ultrasonik","usaha","vakum","vektor","volt","voltase","watt"]),
@@ -727,7 +704,6 @@ const CAT_WORDS = {
   geografi: new Set(["abrasi","aeolian","atmosfer","awan","batuan","biosfer","bencana","cekungan","danau","dataran","delta","deforestasi","denudasian","deposisi","drainase","erosi","estuari","flora","fauna","gunung","hutan","irigasi","iklim","karst","kawasan","kutub","lahan","lahar","lapisan","laut","lereng","litosfer","mangrove","muara","ngarai","oseanografi","pantai","pegunungan","perairan","pesisir","plato","polusi","rawa","relief","sabana","sedimen","semenanjung","sesar","stratigrafi","sungai","tanah","tebing","tektonik","topografi","tropis","vegetasi","vulkanik","vulkanisme","waduk","wilayah"])
 };
 
-// ——— Load wordlist.json and merge ———
 let ALL_WORDS = [];
 
 function buildWordList(extra = []) {
@@ -813,7 +789,6 @@ function render() {
 
   let pool = ALL_WORDS;
 
-  // Category filter
   if (currentCat !== 'all' && CAT_WORDS[currentCat]) {
     pool = pool.filter(w => CAT_WORDS[currentCat].has(w));
   }
